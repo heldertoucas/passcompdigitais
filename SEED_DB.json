@@ -1,0 +1,94 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "course_code": "PASS10",
+      "title": "Descobrir a Inteligência Artificial e a Programação",
+      "description": "Uma viagem pela IA e Programação, desde os conceitos básicos à criação de conteúdos e ao pensamento crítico.",
+      "full_description": "Neste curso prático e dinâmico, vamos desmistificar a Inteligência Artificial, aprender a usar ferramentas de IA no dia a dia, explorar o nosso potencial criativo e refletir sobre o nosso papel como cidadãos digitais responsáveis na nova era da IA.",
+      "image_url": "/images/courses/pass10-cover.png",
+      "requires_code": true
+    }
+  ],
+  "missions": [
+    {
+      "id": 1,
+      "title": "Missão 1: O Que é a Inteligência Artificial?",
+      "rise_html_content": ""
+    },
+    {
+      "id": 2,
+      "title": "Missão 2: A IA por Dentro e em Ação",
+      "rise_html_content": ""
+    },
+    {
+      "id": 3,
+      "title": "Missão 3: Ética, Vícios e o Poder Criativo da IA",
+      "rise_html_content": ""
+    },
+    {
+      "id": 4,
+      "title": "Missão 4: A Arte do Diálogo e o Lado Humano da IA",
+      "rise_html_content": ""
+    },
+    {
+      "id": 5,
+      "title": "Missão 5: A Nossa Viagem - Cidadania Digital em Ação",
+      "rise_html_content": ""
+    }
+  ],
+  "course_missions": [
+    { "course_id": 1, "mission_id": 1, "mission_order": 1 },
+    { "course_id": 1, "mission_id": 2, "mission_order": 2 },
+    { "course_id": 1, "mission_id": 3, "mission_order": 3 },
+    { "course_id": 1, "mission_id": 4, "mission_order": 4 },
+    { "course_id": 1, "mission_id": 5, "mission_order": 5 }
+  ],
+  "badges": [
+    {
+      "id": 1,
+      "name": "Explorador(a) Curioso(a)",
+      "description": "Conquistado por concluir a Missão 1 e dar os primeiros passos corajosos no mundo da IA.",
+      "external_badge_url": "https://lisboacidadeaprendizagem.pt/badges/pass10-m1",
+      "unlock_instructions": "Para adicionar este Open Badge à sua mochila digital, aceda ao seu perfil na plataforma Lisboa Cidade da Aprendizagem e insira o código de resgate: PCD-M1-XYZ.",
+      "icon_url": "/images/badges/badge-m1-explorador.png",
+      "mission_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Detetive Digital",
+      "description": "Conquistado por usar a IA para investigar e extrair informação de documentos complexos na Missão 2.",
+      "external_badge_url": "https://lisboacidadeaprendizagem.pt/badges/pass10-m2",
+      "unlock_instructions": "Para adicionar este Open Badge à sua mochila digital, aceda ao seu perfil na plataforma Lisboa Cidade da Aprendizagem e insira o código de resgate: PCD-M2-XYZ.",
+      "icon_url": "/images/badges/badge-m2-detetive.png",
+      "mission_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Artista Consciente",
+      "description": "Conquistado por debater a ética, investigar preconceitos e criar arte com IA na Missão 3.",
+      "external_badge_url": "https://lisboacidadeaprendizagem.pt/badges/pass10-m3",
+      "unlock_instructions": "Para adicionar este Open Badge à sua mochila digital, aceda ao seu perfil na plataforma Lisboa Cidade da Aprendizagem e insira o código de resgate: PCD-M3-XYZ.",
+      "icon_url": "/images/badges/badge-m3-artista.png",
+      "mission_id": 3
+    },
+    {
+      "id": 4,
+      "name": "Mestre do Diálogo",
+      "description": "Conquistado por dominar as técnicas de Engenharia de Prompts e refletir sobre o lado humano da IA na Missão 4.",
+      "external_badge_url": "https://lisboacidadeaprendizagem.pt/badges/pass10-m4",
+      "unlock_instructions": "Para adicionar este Open Badge à sua mochila digital, aceda ao seu perfil na plataforma Lisboa Cidade da Aprendizagem e insira o código de resgate: PCD-M4-XYZ.",
+      "icon_url": "/images/badges/badge-m4-dialogo.png",
+      "mission_id": 4
+    },
+    {
+      "id": 5,
+      "name": "Cidadão/Cidadã Digital",
+      "description": "Conquistado por completar a jornada, sintetizar as aprendizagens e comprometer-se com a cidadania digital na Missão 5.",
+      "external_badge_url": "https://lisboacidadeaprendizagem.pt/badges/pass10-m5",
+      "unlock_instructions": "Para adicionar este Open Badge à sua mochila digital, aceda ao seu perfil na plataforma Lisboa Cidade da Aprendizagem e insira o código de resgate: PCD-M5-XYZ.",
+      "icon_url": "/images/badges/badge-m5-cidadao.png",
+      "mission_id": 5
+    }
+  ]
+}
