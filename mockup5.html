@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup v5 (DaisyUI) - Passaporte Competências Digitais</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google Fonts: Lexend (Títulos) e Inter (Corpo de Texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Configuração Personalizada -->
+    <style>
+        :root {
+            /* Definir as nossas cores personalizadas para o tema DaisyUI */
+            --pcd-blue: #2563EB;
+            --pcd-roxo: #7C3AED;
+            --pcd-text-dark: #111827;
+            --pcd-text-light: #6B7280;
+            --pcd-bg-soft: #F9FAFB;
+        }
+
+        html[data-theme='light'] {
+            /* Sobrescrever as cores do tema 'light' do DaisyUI */
+            --p: var(--pcd-blue);      /* Primary */
+            --pc: white;               /* Primary-content */
+            --s: var(--pcd-roxo);      /* Secondary */
+            --b1: white;               /* Base-100 (fundo principal) */
+            --b2: var(--pcd-bg-soft);  /* Base-200 (fundo suave) */
+            --bc: #E5E7EB;             /* Base-content (cor da borda) */
+            --fallback-b1: white;
+            --fallback-b2: #F9FAFB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--pcd-text-dark);
+        }
+
+        .font-lexend {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .text-light {
+            color: var(--pcd-text-light);
+        }
+    </style>
+
+</head>
+
+<body class="bg-base-100">
+
+    <!-- ======================= -->
+    <!--    HEADER / NAVBAR      -->
+    <!-- ======================= -->
+    <div class="navbar bg-base-100/80 backdrop-blur-sm sticky top-0 z-50 border-b border-base-content/10">
+        <div class="container mx-auto">
+            <div class="flex-1">
+                 <div class="flex items-center space-x-3">
+                    <svg class="h-7 w-auto text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    <span class="font-lexend text-xl font-semibold">Passaporte Digital</span>
+                </div>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1 hidden sm:flex">
+                    <li><a>A Minha Aprendizagem</a></li>
+                </ul>
+                <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="Avatar da Sofia" src="https://placehold.co/100x100/E9ECEF/6C757D?text=S" />
+                        </div>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a class="justify-between">Perfil</a></li>
+                        <li><a>Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================== -->
+    <!--    Layout Principal (Grelha)   -->
+    <!-- =============================== -->
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+            <!-- Coluna de Conteúdo Principal -->
+            <main class="lg:col-span-8 py-10">
+                
+                <!-- Secção Hero -->
+                <div class="hero rounded-2xl bg-base-200 p-8 md:p-12">
+                    <div class="hero-content flex-col lg:flex-row-reverse">
+                        <svg class="hidden lg:block max-w-sm" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#A78BFA" d="M48.4,-69.1C62.9,-60.9,75.1,-47.9,79.4,-32.7C83.7,-17.5,80.1,-0.2,74.5,15.1C68.9,30.4,61.3,43.7,50,54.8C38.7,65.9,23.6,74.8,7.2,77.5C-9.2,80.2,-26.8,76.8,-42.6,68.5C-58.4,60.2,-72.4,47,-78.6,31.4C-84.8,15.8,-83.2,-2.2,-76.3,-17.1C-69.3,-32,-57,-43.8,-43.7,-53.4C-30.4,-63,-16.1,-70.4,-0.4,-70.1C15.3,-69.8,33.9,-77.3,48.4,-69.1Z" transform="translate(100 100)" />
+                        </svg>
+                        <div>
+                            <h1 class="font-lexend text-4xl lg:text-5xl font-bold leading-tight">A sua Jornada Digital Começa Aqui</h1>
+                            <p class="py-6 text-lg text-light">Descubra cursos e desafios desenhados para si. Desenvolva as suas competências e navegue no mundo digital com mais confiança.</p>
+                            <a href="#catalog-section" class="btn btn-primary">Explorar Competências</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secção do Catálogo -->
+                <section id="catalog-section" class="mt-20">
+                    <h2 class="font-lexend text-3xl font-bold">Passaporte Competências Digitais</h2>
+                    <p class="mt-3 text-lg text-light">Escolha uma competência para ver as experiências de aprendizagem.</p>
+                    
+                    <!-- Grelha de Competências -->
+                    <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+                        
+                        <!-- Card Ativo (Exemplo MVP) -->
+                        <div id="skill-card-10" class="card card-compact bg-base-200 hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer">
+                            <figure class="px-10 pt-10">
+                                <div class="w-20 h-20 bg-secondary/10 rounded-xl flex items-center justify-center">
+                                     <svg class="w-10 h-10 text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="12" width="16" height="8" rx="2"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M12 20v-4"/></svg>
+                                </div>
+                            </figure>
+                            <div class="card-body items-center text-center">
+                                <h2 class="card-title font-lexend">IA e Programação</h2>
+                            </div>
+                        </div>
+                        
+                        <!-- Cards Inativos -->
+                        <div class="card card-compact bg-gray-100/60 opacity-70"><figure class="px-10 pt-10"><div class="w-20 h-20 bg-gray-200 rounded-xl"></div></figure><div class="card-body items-center text-center"><h2 class="card-title font-lexend text-gray-500">Computador</h2></div></div>
+                        <div class="card card-compact bg-gray-100/60 opacity-70"><figure class="px-10 pt-10"><div class="w-20 h-20 bg-gray-200 rounded-xl"></div></figure><div class="card-body items-center text-center"><h2 class="card-title font-lexend text-gray-500">Internet</h2></div></div>
+                        <div class="card card-compact bg-gray-100/60 opacity-70"><figure class="px-10 pt-10"><div class="w-20 h-20 bg-gray-200 rounded-xl"></div></figure><div class="card-body items-center text-center"><h2 class="card-title font-lexend text-gray-500">Colaboração</h2></div></div>
+                        <div class="card card-compact bg-gray-100/60 opacity-70"><figure class="px-10 pt-10"><div class="w-20 h-20 bg-gray-200 rounded-xl"></div></figure><div class="card-body items-center text-center"><h2 class="card-title font-lexend text-gray-500">Cidadania</h2></div></div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Coluna da Community Sidebar -->
+            <aside class="lg:col-span-4 py-10">
+                <div class="sticky top-28 space-y-8">
+                    <!-- Secção: A Minha Jornada -->
+                    <div>
+                        <h2 class="font-lexend text-xl font-semibold mb-4">A Minha Jornada</h2>
+                        <div class="card bg-base-200">
+                           <div class="card-body items-center text-center">
+                               <div class="radial-progress text-primary" style="--value:75; --size:8rem; --thickness: 0.75rem;" role="progressbar">
+                                   <div class="flex flex-col items-center">
+                                        <span class="text-4xl">🚀</span>
+                                        <span class="font-bold text-sm">75/100</span>
+                                   </div>
+                               </div>
+                               <h2 class="card-title mt-2">Nível 1: Rocket Points</h2>
+                           </div>
+                        </div>
+                    </div>
+
+                    <!-- Secção: Dê Reconhecimento -->
+                    <div>
+                        <h2 class="font-lexend text-xl font-semibold mb-4">Reconhecer Colegas</h2>
+                        <div class="avatar-group -space-x-4 rtl:space-x-reverse">
+                            <div class="avatar border-base-100 hover:border-primary transition-all">
+                                <div class="w-12">
+                                    <img src="https://placehold.co/100x100/17A2B8/FFFFFF?text=A" alt="Avatar da Ana" title="Ana"/>
+                                </div>
+                            </div>
+                            <div class="avatar border-base-100 hover:border-primary transition-all">
+                                <div class="w-12">
+                                    <img src="https://placehold.co/100x100/28A745/FFFFFF?text=J" alt="Avatar do João" title="João"/>
+                                </div>
+                            </div>
+                            <div class="avatar border-base-100 hover:border-primary transition-all">
+                                <div class="w-12">
+                                    <img src="https://placehold.co/100x100/FFC107/FFFFFF?text=M" alt="Avatar da Maria" title="Maria"/>
+                                </div>
+                            </div>
+                            <div class="avatar placeholder border-base-100">
+                                <div class="w-12 bg-neutral-200 text-neutral-content">
+                                    <span>+5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secção: Feed de Atividades -->
+                    <div>
+                        <h2 class="font-lexend text-xl font-semibold mb-4">Feed de Atividades</h2>
+                        <ul class="space-y-4">
+                            <li><a class="flex items-start space-x-4 p-2 rounded-lg hover:bg-base-200">
+                                <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-green-100 text-lg">🏆</div>
+                                <div><p class="text-sm">Concluiu a "Missão 1" e ganhou <strong>100 pontos!</strong></p><p class="text-xs text-light mt-0.5">há 5 minutos</p></div>
+                            </a></li>
+                            <li><a class="flex items-start space-x-4 p-2 rounded-lg hover:bg-base-200">
+                                <img class="h-10 w-10 rounded-full flex-shrink-0" src="https://placehold.co/100x100/17A2B8/FFFFFF?text=A" alt="Avatar da Ana">
+                                <div><p class="text-sm"><strong>Ana</strong> atribuiu-lhe o badge <strong class="text-secondary">"Ótima Ajuda"</strong>.</p><p class="text-xs text-light mt-0.5">há 2 horas</p></div>
+                            </a></li>
+                            <li><a class="flex items-start space-x-4 p-2 rounded-lg hover:bg-base-200">
+                                <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-red-100 text-lg">🏅</div>
+                                <div><p class="text-sm">Badge Desbloqueado: <strong>"Explorador(a) Curioso(a)"</strong>.</p><p class="text-xs text-light mt-0.5">ontem</p></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
