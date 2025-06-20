@@ -85,14 +85,9 @@ Saber Mais e Aderir →
 
 ### Página da Experiência de Aprendizagem (O "Átrio")
 
-| Chave | Valor (Texto) |
-|
-
 --- (Estado: Pendente) ---
 
- |
-
- |
+| Chave | Valor (Texto) |
 |
 
 `course_pending_title`
@@ -138,13 +133,10 @@ Ativar Curso
 O código inserido não é válido. Por favor, verifique e tente novamente.
 
  |
-|
 
 --- (Estado: Ativo) ---
 
- |
-
- |
+| Chave | Valor (Texto) |
 |
 
 `course_active_progress_label`
@@ -172,13 +164,10 @@ Missões Concluídas
 Ver Certificado na Plataforma CML
 
  |
-|
 
 --- (Secções de Informação) ---
 
- |
-
- |
+| Chave | Valor (Texto) |
 |
 
 `course_section_about_title`
@@ -215,13 +204,10 @@ A quem se destina?
 Informações Práticas
 
  |
-|
 
 --- (Lista de Missões) ---
 
- |
-
- |
+| Chave | Valor (Texto) |
 |
 
 `mission_status_completed`
@@ -307,13 +293,10 @@ Feed de Atividades
 Ainda não há atividade no seu feed. Comece uma missão para ganhar os seus primeiros pontos!
 
  |
-|
 
 --- (Modal de Reconhecimento) ---
 
- |
-
- |
+| Chave | Valor (Texto) |
 |
 
 `recognition_modal_title`
