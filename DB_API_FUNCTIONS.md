@@ -158,6 +158,10 @@ Esta função também deve ser uma Função de Edge (RPC) para garantir que a at
 Código SQL da função no Supabase:
 
 ```
+-- Função para um utilizador completar uma missão, ganhando pontos e badges.
+-- É definida como SECURITY DEFINER para poder contornar as políticas de RLS
+-- de forma segura, uma vez que todas as operações são explicitamente
+-- realizadas apenas para o utilizador que chama a função (auth.uid()).
 CREATE OR REPLACE FUNCTION complete_mission(mission_id_to_complete INT)
 RETURNS JSON AS $$
 DECLARE
@@ -193,7 +197,7 @@ BEGIN
 
     RETURN json_build_object('success', true, 'new_total_points', new_total_points);
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
 ```
 
@@ -222,3 +226,39 @@ async function completeMission(missionId) {
 ```
 
 Com estas funções, cobrimos os principais fluxos da nossa aplicação. A utilização de Funções de Edge (RPC) para operações sensíveis é uma boa prática que aumenta a segurança e a robustez do nosso sistema.
+
+
+### 4\. Políticas de segurança (RLS policies)
+Para obter uma lista completa de todas as políticas de segurança (RLS policies) ativas na sua base de dados, as suas definições e a que tabelas se aplicam, pode executar o seguinte comando SQL diretamente no "SQL Editor" do seu projeto Supabase.
+
+Este comando consulta a vista de sistema `pg_policies`, que é o catálogo onde o PostgreSQL armazena esta informação.
+
+SQL
+
+```
+SELECT
+    p.schemaname AS schema,
+    p.tablename AS tabela,
+    p.policyname AS nome_da_politica,
+    p.cmd AS comando,
+    p.qual AS condicao_using, -- A regra para SELECT, UPDATE, DELETE
+    p.with_check AS condicao_with_check -- A regra para INSERT, UPDATE
+FROM
+    pg_policies p
+WHERE
+    p.schemaname = 'public'
+ORDER BY
+    p.tablename, p.policyname;
+
+```
+
+### O que cada coluna significa:
+
+-   **`schema`**: O esquema da tabela (no nosso caso, deverá ser sempre `public`).
+-   **`tabela`**: O nome da tabela onde a política está a ser aplicada (ex: `users`, `notifications`).
+-   **`nome_da_politica`**: O nome que demos à política quando a criámos (ex: "Users can view their own profile.").
+-   **`comando`**: A que tipo de operação a política se aplica (`SELECT`, `INSERT`, `UPDATE`, `DELETE`). Se o valor for `NULL`, significa que se aplica a `ALL` (todos os comandos).
+-   **`condicao_using`**: Mostra a expressão exata da cláusula `USING`. É a regra que o sistema verifica para permitir a leitura ou manipulação de linhas existentes. Para as nossas políticas, deverá ver aqui `(auth.uid() = id)` ou `(auth.uid() = user_id)`, por exemplo.
+-   **`condicao_with_check`**: Mostra a expressão da cláusula `WITH CHECK`. É a regra que o sistema verifica para permitir a criação ou atualização de novas linhas.
+
+Ao executar este comando, terá uma visão completa e detalhada de todas as regras de segurança que estão a proteger as tabelas da sua aplicação, permitindo-lhe confirmar que tudo está configurado corretamente.
