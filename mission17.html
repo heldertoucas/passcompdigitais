@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Final - Passaporte Competências Digitais</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Lexend & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <!-- Configuração do Tema -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'sans': ['Inter', 'sans-serif'], 'lexend': ['Lexend', 'sans-serif'] },
+                    colors: {
+                        'pcd-page-bg': '#F8F9FE', 'pcd-card-bg': '#FFFFFF',
+                        'pcd-bg-soft': '#F9FAFB', 'pcd-border': '#E5E7EB',
+                        'pcd-text-dark': '#111827', 'pcd-text-light': '#6B7280',
+                        'pcd-blue': '#2563EB', 'pcd-roxo': '#7C3AED', 'pcd-green': '#059669',
+                        'pcd-blue-light': '#EFF6FF', 'pcd-roxo-light': '#F5F3FF',
+                        'pcd-green-light': '#F0FDF4',
+                    },
+                    borderRadius: { '4xl': '2rem' },
+                    boxShadow: {
+                        'card': '0 4px 16px 0 rgba(0, 0, 0, 0.07)',
+                        'hero': '0 10px 30px -5px rgba(37, 99, 235, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .mission-block { margin-bottom: 3.5rem; }
+        .block-title { font-family: 'Lexend', sans-serif; font-size: 1.5rem; font-weight: 600; color: #111827; margin-bottom: 1rem; display: flex; align-items: center; }
+        .block-title svg { margin-right: 0.75rem; }
+        .block-text { font-size: 1.125rem; color: #4B5563; line-height: 1.7; }
+    </style>
+</head>
+
+<body class="bg-pcd-page-bg font-sans text-pcd-text-dark antialiased">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="bg-pcd-card-bg/80 backdrop-blur-sm sticky top-0 z-40 border-b border-pcd-border/70">
+        <div class="container mx-auto px-6 py-4"><div class="flex items-center justify-between"><div class="flex items-center space-x-3"><svg class="h-7 w-auto text-pcd-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="font-lexend text-xl font-semibold">Passaporte Digital</span></div><div class="flex items-center space-x-4"><a href="#" class="hidden sm:block text-sm font-medium text-pcd-text-light hover:text-pcd-blue transition-colors">A Minha Aprendizagem</a><img class="h-10 w-10 rounded-full object-cover" src="https://placehold.co/100x100/E9ECEF/6C757D?text=S" alt="Avatar da Sofia" title="Sofia"></div></div></div>
+    </header>
+
+    <!-- Layout Principal (Grelha) -->
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-12">
+
+            <!-- Coluna de Conteúdo Principal (Missão 1) -->
+            <main class="lg:col-span-8 py-10">
+                
+                <section class="mb-16">
+                    <h1 class="font-lexend text-4xl lg:text-5xl font-bold text-pcd-text-dark leading-tight">Missão 1: O Que é a Inteligência Artificial?</h1>
+                    <p class="mt-4 text-lg text-pcd-text-light">Bem-vindo(a) à sua primeira missão! Vamos juntos desmistificar a "magia" da IA e descobrir como estas ferramentas nos podem ajudar no dia a dia.</p>
+                </section>
+
+                <div id="mission-content">
+                    <!-- O conteúdo da missão será renderizado aqui dinamicamente -->
+                </div>
+
+            </main>
+
+            <!-- Coluna da Community Sidebar -->
+            <aside class="lg:col-span-4 py-10">
+                <div class="sticky top-28 space-y-12">
+                    <div>
+                        <h2 class="font-lexend text-xl font-semibold mb-4 text-pcd-text-dark">A Minha Jornada</h2>
+                        <div class="p-5 bg-gradient-to-br from-pcd-blue to-pcd-roxo rounded-2xl text-center shadow-lg">
+                            <div class="relative w-36 h-36 mx-auto"><svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36"><circle class="text-white/40" cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="3"></circle><circle class="text-white" cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="75, 100" stroke-linecap="round" style="transition: stroke-dasharray 0.5s ease;"></circle></svg><div class="absolute inset-0 flex flex-col items-center justify-center"><span class="text-4xl">🚀</span><span class="font-bold text-white text-3xl">75</span><span class="text-xs text-purple-200 tracking-wider mt-0.5">PONTOS</span></div></div>
+                            <p class="mt-4 font-semibold text-white text-lg">Nível 1: Explorador Digital</p>
+                        </div>
+                    </div>
+                    <div class="bg-pcd-card-bg p-6 rounded-2xl shadow-card">
+                        <h2 class="font-lexend text-xl font-semibold text-pcd-text-dark mb-5">Feed de Atividades</h2>
+                        <ul class="space-y-5">
+                            <li class="flex items-start space-x-4"><span class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-green-100 text-lg">🏆</span><div><p class="text-sm text-pcd-text-dark">Concluiu a "Missão 1" e ganhou <span class="font-bold">100 pontos!</span></p><p class="text-xs text-pcd-text-light mt-0.5">há 5 minutos</p></div></li>
+                            <li class="flex items-start space-x-4"><img class="h-10 w-10 rounded-full flex-shrink-0 object-cover" src="https://placehold.co/100x100/17A2B8/FFFFFF?text=A" alt="Avatar da Ana"><div><p class="text-sm text-pcd-text-dark"><span class="font-semibold">Ana</span> atribuiu-lhe o badge <span class="font-semibold text-pcd-roxo">"Ótima Ajuda"</span>.</p><p class="text-xs text-pcd-text-light mt-0.5">há 2 horas</p></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const missionContainer = document.getElementById('mission-content');
+            
+            const renderBlock = (block) => {
+                const blockWrapper = document.createElement('div');
+                blockWrapper.className = 'mission-block';
+                blockWrapper.innerHTML = block.content;
+                missionContainer.appendChild(blockWrapper);
+                if (block.script) {
+                    const scriptTag = document.createElement('script');
+                    scriptTag.innerHTML = block.script;
+                    blockWrapper.appendChild(scriptTag);
+                }
+            };
+            
+            const missionBlocks = [
+                // Bloco 1: Narrativa Interativa
+                {
+                    content: `
+                        <div class="bg-pcd-card-bg p-8 rounded-2xl shadow-card">
+                            <h2 class="block-title">
+                               <svg class="w-7 h-7 text-pcd-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                               Aprender: Um Problema para Resolver
+                            </h2>
+                            <p class="block-text">A sua vizinha, a D. Amélia, ouviu falar da "Inteligência Artificial" nas notícias e está assustada. Ela pede-lhe ajuda para perceber o que é. <strong>O que lhe diz primeiro?</strong></p>
+                            <div id="narrative-options" class="mt-6 space-y-4">
+                                <button data-feedback="feedback-a" class="w-full text-left p-4 bg-pcd-bg-soft border-2 border-pcd-border rounded-lg hover:border-pcd-blue hover:bg-pcd-blue-light transition">A) "É uma espécie de 'calculadora de palavras' muito avançada."</button>
+                                <button data-feedback="feedback-b" class="w-full text-left p-4 bg-pcd-bg-soft border-2 border-pcd-border rounded-lg hover:border-pcd-blue hover:bg-pcd-blue-light transition">B) "Não se preocupe, vamos descobrir juntos! Veja este vídeo."</button>
+                                <button data-feedback="feedback-c" class="w-full text-left p-4 bg-pcd-bg-soft border-2 border-pcd-border rounded-lg hover:border-pcd-blue hover:bg-pcd-blue-light transition">C) "É uma tecnologia que aprende com muitos exemplos."</button>
+                            </div>
+                            <div id="narrative-feedback" class="hidden mt-4 bg-pcd-blue-light border-l-4 border-pcd-blue p-4 rounded-md"></div>
+                        </div>`,
+                    script: `
+                        const feedbackMessages = {
+                            'feedback-a': '<p class="font-semibold text-pcd-blue">Excelente analogia!</p><p>É uma ótima forma de começar. A ideia de que a IA calcula probabilidades para encontrar a próxima palavra é um dos seus segredos. Vamos aprofundar isso com o vídeo seguinte.</p>',
+                            'feedback-b': '<p class="font-semibold text-pcd-blue">Ótima abordagem!</p><p>Convidar alguém a descobrir connosco é a melhor forma de combater o medo. O vídeo que se segue é o recurso perfeito para essa descoberta partilhada.</p>',
+                            'feedback-c': '<p class="font-semibold text-pcd-blue">Perfeito!</p><p>Essa é a base de tudo. A IA aprende com uma quantidade imensa de exemplos. O vídeo seguinte explica exatamente como isso acontece.</p>'
+                        };
+                        document.getElementById('narrative-options').addEventListener('click', (e) => {
+                            if (e.target.tagName === 'BUTTON') {
+                                const feedbackId = e.target.dataset.feedback;
+                                const feedbackContainer = document.getElementById('narrative-feedback');
+                                feedbackContainer.innerHTML = feedbackMessages[feedbackId];
+                                feedbackContainer.classList.remove('hidden');
+                                document.getElementById('narrative-options').style.display = 'none';
+                            }
+                        });
+                    `
+                },
+                
+                // Bloco 2: Descoberta de Vídeo
+                {
+                    content: `
+                        <div class="bg-pcd-card-bg p-8 rounded-2xl shadow-card">
+                            <h2 class="block-title">
+                                <svg class="w-7 h-7 text-pcd-roxo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 0-14.14 0"/><path d="M21.12 6.88a15 15 0 0 0-21.24 0"/><path d="M6.34 17.66a10 10 0 0 0 14.14 0"/><path d="M3.88 15.12a15 15 0 0 0 21.24 0"/></svg>
+                                Descobrir: A Explicação dos Criadores
+                            </h2>
+                            <div class="mt-4 rounded-lg overflow-hidden shadow-lg border border-pcd-border">
+                                <div class="aspect-video bg-black"><iframe src="https://www.youtube.com/embed/X-AWdfSFCHQ" frameborder="0" allowfullscreen class="w-full h-full"></iframe></div>
+                            </div>
+                            <div class="text-right mt-2">
+                                <a href="https://www.youtube.com/watch?v=X-AWdfSFCHQ" target="_blank" class="text-sm text-pcd-blue hover:underline">Ver em ecrã inteiro ↗</a>
+                            </div>
+                        </div>`
+                },
+                
+                // Bloco 3: Aprender com o vídeo
+                {
+                    content: `
+                        <div class="bg-pcd-card-bg p-8 rounded-2xl shadow-card">
+                            <h2 class="block-title">
+                               <svg class="w-7 h-7 text-pcd-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                               Aprender: Os Conceitos-Chave
+                            </h2>
+                            <div class="mt-4 space-y-3">
+                                <details class="group bg-pcd-bg-soft p-4 rounded-lg cursor-pointer"><summary class="flex items-center justify-between font-semibold text-pcd-text-dark">O que são "Grandes Modelos de Linguagem"? <span class="text-2xl font-light transform group-open:rotate-45 transition-transform">+</span></summary><p class="mt-2 text-pcd-text-light pt-2 border-t border-pcd-border">São sistemas treinados com uma quantidade imensa de informação (como grande parte da Internet) para compreender e gerar texto.</p></details>
+                                <details class="group bg-pcd-bg-soft p-4 rounded-lg cursor-pointer"><summary class="flex items-center justify-between font-semibold text-pcd-text-dark">Como é que a IA "aprende"? <span class="text-2xl font-light transform group-open:rotate-45 transition-transform">+</span></summary><p class="mt-2 text-pcd-text-light pt-2 border-t border-pcd-border">Através de probabilidades. O sistema analisa qual a palavra ou pedaço de palavra (um "token") que tem mais probabilidade de vir a seguir, com base no contexto que já tem. É como quando o nosso cérebro completa a frase "pão com..." com "manteiga".</p></details>
+                            </div>
+                        </div>`
+                },
+                
+                // Bloco 4: Ponto de Partilha Social
+                {
+                    content: `
+                        <div class="bg-pcd-bg-soft p-8 rounded-2xl border border-pcd-border">
+                             <h2 class="block-title">
+                                <svg class="w-7 h-7 text-pcd-text-light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                Ponto de Partilha
+                            </h2>
+                            <label for="reflection" class="block-text font-semibold">Qual foi a ideia mais surpreendente que retirou deste vídeo?</label>
+                            <textarea id="reflection" class="mt-4 w-full p-3 border-2 border-pcd-border rounded-lg focus:border-pcd-blue focus:ring-1 focus:ring-pcd-blue transition" rows="3" placeholder="Partilhe a sua reflexão..."></textarea>
+                            <button class="mt-4 bg-pcd-blue text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition">Partilhar com o grupo</button>
+                            <div id="shared-answers" class="mt-6 hidden">
+                                <h3 class="font-lexend font-semibold text-pcd-text-dark mb-3">Reflexões da Turma:</h3>
+                                <div class="space-y-3 max-h-48 overflow-y-auto pr-2">
+                                    <div class="p-3 bg-white border border-pcd-border rounded-lg text-sm"><strong>Ana:</strong> "Não sabia que era tudo baseado em probabilidades, pensava que a IA 'entendia' mesmo o que dizia."</div>
+                                    <div class="p-3 bg-white border border-pcd-border rounded-lg text-sm"><strong>João:</strong> "Fiquei surpreendido com a quantidade de informação necessária para treinar estes modelos."</div>
+                                </div>
+                            </div>
+                        </div>`,
+                    script: `
+                        document.querySelector('#reflection + button').addEventListener('click', (e) => {
+                           const reflection = document.getElementById('reflection').value;
+                           if(reflection.trim() !== '') {
+                               const answersContainer = document.getElementById('shared-answers');
+                               answersContainer.classList.remove('hidden');
+                               const newReflection = document.createElement('div');
+                               newReflection.className = 'p-3 bg-pcd-blue-light border border-pcd-blue rounded-lg text-sm';
+                               newReflection.innerHTML = '<strong>Você:</strong> ' + reflection;
+                               answersContainer.querySelector('.space-y-3').prepend(newReflection);
+                               document.getElementById('reflection').value = '';
+                               e.target.textContent = 'Obrigado por partilhar!';
+                               e.target.disabled = true;
+                           }
+                        });
+                    `
+                },
+                
+                // Bloco 5: Desafio Digital com Simulação
+                {
+                    content: `
+                        <div class="bg-pcd-card-bg p-8 rounded-2xl shadow-card">
+                             <h2 class="block-title">
+                                <svg class="w-7 h-7 text-pcd-green" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                                Desafio Digital: Como "Pensa" a IA?
+                            </h2>
+                             <p class="block-text">Como é que a IA constrói uma frase? Vamos descobrir através de duas abordagens.</p>
+                             <div class="mt-6 p-4 bg-pcd-bg-soft rounded-lg border border-pcd-border">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="font-lexend font-semibold text-pcd-text-dark mb-3">Jogo "Construção em Cadeia"</h3>
+                                    <div class="flex space-x-2 flex-shrink-0">
+                                        <span class="text-xs font-medium bg-gray-200 text-gray-700 px-2.5 py-1 rounded-full">Em Grupo</span>
+                                        <span class="text-xs font-medium bg-gray-200 text-gray-700 px-2.5 py-1 rounded-full">Presencial</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-pcd-text-light">Participe numa atividade colaborativa para descobrir o processo da IA, palavra por palavra, votando na mais provável a cada passo.</p>
+                             </div>
+                            <div class="mt-4 p-4 bg-pcd-bg-soft rounded-lg border border-pcd-border">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="font-lexend font-semibold text-pcd-text-dark mb-3">Pensar como a IA</h3>
+                                    <span class="text-xs font-medium bg-green-200 text-green-800 px-2.5 py-1 rounded-full">Online</span>
+                                </div>
+                                <p class="text-sm text-pcd-text-light mb-4">Sinta na pele como a IA "pensa". Construa uma frase, clicando na palavra que lhe parece mais provável a cada passo.</p>
+                                <div id="sentence-builder" class="bg-white p-6 rounded-lg">
+                                    <p id="sentence-output" class="text-xl font-semibold h-14">Hoje</p>
+                                    <div id="word-options" class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+                                </div>
+                            </div>
+                            <div class="bg-pcd-blue-light border-l-4 border-pcd-blue p-4 rounded-md mt-6">
+                                <h3 class="font-lexend font-semibold text-pcd-blue mb-1">Principal Aprendizagem</h3>
+                                <p class="text-pcd-text-dark">A IA generativa não sabe o que vai dizer. Ela olha para o contexto e "calcula" a palavra seguinte mais provável.</p>
+                            </div>
+                        </div>`,
+                     script: `
+                        const sentenceOutput = document.getElementById('sentence-output');
+                        const wordOptionsContainer = document.getElementById('word-options');
+                        let currentSentence = "Hoje";
+                        let step = 0;
+                        const wordSteps = [['está', 'é', 'fui'], ['um', 'uma', 'o'], ['dia', 'tempo', 'sol'], ['de', 'com', 'para'], ['sol', 'chuva', 'festa']];
+
+                        function updateBuilder() {
+                            if (!sentenceOutput || !wordOptionsContainer) return;
+                            sentenceOutput.textContent = currentSentence;
+                            wordOptionsContainer.innerHTML = '';
+                            if (step < wordSteps.length) {
+                                wordSteps[step].forEach(word => {
+                                    const button = document.createElement('button');
+                                    button.className = 'p-3 bg-pcd-card-bg border-2 border-pcd-border rounded-lg hover:border-pcd-blue transition';
+                                    button.textContent = word;
+                                    button.onclick = () => { currentSentence += \` \${word}\`; step++; updateBuilder(); };
+                                    wordOptionsContainer.appendChild(button);
+                                });
+                            } else {
+                                sentenceOutput.textContent += '.';
+                                wordOptionsContainer.innerHTML = '<p class="text-pcd-green font-semibold col-span-full text-center">Frase completa! Bom trabalho.</p>';
+                            }
+                        }
+                        updateBuilder();
+                    `
+                },
+                
+                // Bloco 6: Aprender: A Primeira Conversa com a IA
+                {
+                    content: `
+                        <div class="bg-pcd-card-bg p-8 rounded-2xl shadow-card">
+                            <h2 class="block-title">
+                               <svg class="w-7 h-7 text-pcd-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                               Aprender: A Primeira Conversa com a IA
+                            </h2>
+                            <p class="block-text">Muitas vezes, o mais difícil é começar. Para que serve um assistente destes? Explore alguns exemplos de pedidos (prompts) que mostram a sua versatilidade.</p>
+                            <div class="mt-6 space-y-4">
+                                <div class="p-4 bg-pcd-bg-soft rounded-lg border border-pcd-border"><strong>Experimente ser criativo:</strong><p class="italic text-pcd-text-light mt-1">"Atua como um explorador do século XV a descrever um telemóvel pela primeira vez no seu diário de bordo."</p></div>
+                                <div class="p-4 bg-pcd-bg-soft rounded-lg border border-pcd-border"><strong>Use-o para desbloquear ideias:</strong><p class="italic text-pcd-text-light mt-1">"Gostei da tua resposta. Que outras perguntas interessantes posso fazer sobre este tema?"</p></div>
+                                <div class="p-4 bg-pcd-bg-soft rounded-lg border border-pcd-border"><strong>Peça ajuda para tarefas práticas:</strong><p class="italic text-pcd-text-light mt-1">"Dá-me 3 dicas simples para cuidar de uma planta de interior para quem não tem experiência nenhuma."</p></div>
+                            </div>
+                            <div class="mt-6">
+                               <a href="https://gemini.google.com" target="_blank" class="inline-flex items-center bg-pcd-blue text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition">
+                                 Abrir a IA Gemini ↗
+                               </a>
+                            </div>
+                        </div>`
+                },
+                // Bloco 7: Desafio Prático: Fábrica de Prompts
+                {
+                    content: `
+                        <div class="bg-pcd-card-bg p-8 rounded-2xl shadow-card">
+                             <div class="flex items-start justify-between mb-4">
+                                <h2 class="block-title">
+                                    <svg class="w-7 h-7 text-pcd-green" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                                    Desafio Digital: A "Fábrica de Prompts"
+                                </h2>
+                            </div>
+                            <p class="block-text">Agora é a sua vez! Aceda à nossa aplicação de apoio "Desafios Digitais" para encontrar uma lista de prompts prontos a usar. A sua missão é explorar a "Fábrica de Prompts", copiar uma das sugestões e ter a sua primeira conversa livre com o Gemini.</p>
+                            <div class="mt-6">
+                                <a href="https://bit.ly/pass10fabricaprompts" target="_blank" class="inline-block bg-pcd-roxo text-white font-semibold py-2 px-5 rounded-lg hover:bg-opacity-90 transition">
+                                    Aceder aos Desafios Digitais
+                                </a>
+                            </div>
+                        </div>
+                    `
+                },
+                // Bloco 8: Descobrir Aplicações
+                {
+                    content: `
+                        <div class="bg-pcd-card-bg p-8 rounded-2xl shadow-card">
+                            <h2 class="block-title">
+                                <svg class="w-7 h-7 text-pcd-roxo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 0-14.14 0"/><path d="M21.12 6.88a15 15 0 0 0-21.24 0"/><path d="M6.34 17.66a10 10 0 0 0 14.14 0"/><path d="M3.88 15.12a15 15 0 0 0 21.24 0"/></svg>
+                                Descobrir: Aplicações no Dia a Dia
+                            </h2>
+                            <p class="block-text">A lógica que aprendeu aqui serve para todos os assistentes de IA (Gemini, ChatGPT, Copilot). As versões gratuitas já são incrivelmente poderosas. Que utilidades práticas conseguimos imaginar para a IA no nosso quotidiano?</p>
+                             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-pcd-bg-soft p-4 rounded-lg flex items-center gap-4"><span class="text-2xl">🍳</span><p><strong>Na Cozinha:</strong> Pedir uma receita com os ingredientes que temos em casa.</p></div>
+                                <div class="bg-pcd-bg-soft p-4 rounded-lg flex items-center gap-4"><span class="text-2xl">✈️</span><p><strong>Em Viagem:</strong> Ajudar a planear um roteiro de fim de semana.</p></div>
+                                <div class="bg-pcd-bg-soft p-4 rounded-lg flex items-center gap-4"><span class="text-2xl">🎓</span><p><strong>Na Aprendizagem:</strong> Pedir para explicar um conceito complexo de forma simples.</p></div>
+                                <div class="bg-pcd-bg-soft p-4 rounded-lg flex items-center gap-4"><span class="text-2xl">💼</span><p><strong>No Trabalho:</strong> Ajudar a resumir a ata de uma reunião ou a aperfeiçoar um email.</p></div>
+                            </div>
+                        </div>`
+                },
+                // Bloco 9: Avaliação Final
+                {
+                    content: `
+                        <div class="bg-pcd-card-bg p-8 rounded-2xl shadow-card">
+                             <h2 class="block-title">
+                                <svg class="w-7 h-7 text-pcd-text-light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                                Verificação Final de Conhecimentos
+                            </h2>
+                            <p class="block-text font-semibold">Cenário: Quer pedir à IA para o/a ajudar a planear uma pequena festa de aniversário. Com base no que aprendemos sobre "contexto", qual dos seguintes pedidos (prompts) tem mais probabilidade de lhe dar uma boa resposta?</p>
+                            <div id="quiz-options" class="mt-6 space-y-4">
+                                <button data-correct="false" class="quiz-option w-full text-left p-4 bg-pcd-bg-soft border-2 border-pcd-border rounded-lg hover:border-red-500 hover:bg-red-50 transition">A) "Festa de aniversário."</button>
+                                <button data-correct="true" class="quiz-option w-full text-left p-4 bg-pcd-bg-soft border-2 border-pcd-border rounded-lg hover:border-green-500 hover:bg-green-50 transition">B) "Ideias para uma festa de aniversário para 10 pessoas, num jardim, com um orçamento de 100€."</button>
+                            </div>
+                            <p id="quiz-feedback" class="mt-4 font-semibold"></p>
+                        </div>`,
+                    script: `
+                        const quizOptions = document.querySelectorAll('.quiz-option');
+                        const quizFeedback = document.getElementById('quiz-feedback');
+                        quizOptions.forEach(button => {
+                            button.addEventListener('click', () => {
+                                const isCorrect = button.dataset.correct === 'true';
+                                if(isCorrect) {
+                                    quizFeedback.textContent = 'Correto! Fornecer mais contexto leva a melhores respostas.';
+                                    quizFeedback.className = 'mt-4 font-semibold text-pcd-green';
+                                    if(typeof confetti === 'function'){ confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } }); }
+                                } else {
+                                    quizFeedback.textContent = 'Tente outra vez. Lembre-se, quanto mais contexto dermos, melhor a IA nos pode ajudar.';
+                                    quizFeedback.className = 'mt-4 font-semibold text-red-500';
+                                }
+                                document.getElementById('quiz-options').style.pointerEvents = 'none';
+                            });
+                        });
+                    `
+                },
+                // Bloco 10: Conclusão
+                {
+                    content: `
+                    <div class="text-center mt-16">
+                        <button class="bg-pcd-blue text-white font-bold py-4 px-10 rounded-full hover:bg-blue-700 transition-all duration-200 shadow-lg shadow-blue-500/30 transform hover:-translate-y-1 text-lg">
+                            CONCLUIR MISSÃO 1
+                        </button>
+                    </div>`
+                }
+            ];
+
+            missionBlocks.forEach(renderBlock);
+        });
+    </script>
+</body>
+</html>
