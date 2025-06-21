@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Final (Hero UI) - Passaporte Competências Digitais</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Lexend (Títulos) e Inter (Corpo de Texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Configuração Personalizada do Tailwind (inspirada no Hero UI e na nossa paleta) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'lexend': ['Lexend', 'sans-serif'],
+                    },
+                    colors: {
+                        'pcd-page-bg': '#F8F9FE',
+                        'pcd-card-bg': '#FFFFFF',
+                        'pcd-bg-soft': '#F9FAFB',
+                        'pcd-border': '#E5E7EB',
+                        'pcd-text-dark': '#111827',
+                        'pcd-text-light': '#6B7280',
+                        'pcd-blue': '#2563EB', 
+                        'pcd-roxo': '#7C3AED', 
+                        'pcd-blue-light': '#EFF6FF',
+                        'pcd-roxo-light': '#F5F3FF',
+                        'pcd-pink-light': '#FFF1F2',
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    },
+                    boxShadow: {
+                        'card': '0 4px 16px 0 rgba(0, 0, 0, 0.07)', 
+                        'hero': '0 10px 30px -5px rgba(37, 99, 235, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        *:focus-visible {
+            outline: 2px solid #2563EB;
+            outline-offset: 2px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="bg-pcd-page-bg font-sans text-pcd-text-dark antialiased">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="bg-pcd-card-bg/80 backdrop-blur-sm sticky top-0 z-40 border-b border-pcd-border/70">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <svg class="h-7 w-auto text-pcd-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    <span class="font-lexend text-xl font-semibold">Passaporte Digital</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hidden sm:block text-sm font-medium text-pcd-text-light hover:text-pcd-blue transition-colors">A Minha Aprendizagem</a>
+                    <img class="h-10 w-10 rounded-full object-cover" src="https://placehold.co/100x100/E9ECEF/6C757D?text=S" alt="Avatar da Sofia" title="Sofia">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Layout Principal (Grelha) -->
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-12">
+
+            <!-- Coluna de Conteúdo Principal -->
+            <main class="lg:col-span-8 py-10">
+                
+                <!-- Secção Hero -->
+                <section class="text-center lg:text-left bg-gradient-to-br from-pcd-blue-light via-pcd-roxo-light to-pcd-pink-light p-8 md:p-12 rounded-3xl shadow-hero">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h1 class="font-lexend text-4xl lg:text-5xl font-bold text-pcd-text-dark leading-tight">A sua Jornada de Aprendizagem Digital Começa Aqui</h1>
+                            <p class="mt-4 text-lg text-pcd-text-light">Descubra cursos, desafios e projetos desenhados para si. Desenvolva as suas competências e navegue no mundo digital com mais confiança.</p>
+                            <div class="mt-8">
+                                <a href="#catalog-section" class="bg-pcd-blue text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30 transform hover:-translate-y-0.5">Explorar Competências</a>
+                            </div>
+                        </div>
+                        <div class="hidden lg:block">
+                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path fill="#A78BFA" d="M48.4,-69.1C62.9,-60.9,75.1,-47.9,79.4,-32.7C83.7,-17.5,80.1,-0.2,74.5,15.1C68.9,30.4,61.3,43.7,50,54.8C38.7,65.9,23.6,74.8,7.2,77.5C-9.2,80.2,-26.8,76.8,-42.6,68.5C-58.4,60.2,-72.4,47,-78.6,31.4C-84.8,15.8,-83.2,-2.2,-76.3,-17.1C-69.3,-32,-57,-43.8,-43.7,-53.4C-30.4,-63,-16.1,-70.4,-0.4,-70.1C15.3,-69.8,33.9,-77.3,48.4,-69.1Z" transform="translate(100 100)" />
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Secção do Catálogo -->
+                <section id="catalog-section" class="mt-20 scroll-mt-24">
+                    <h2 class="font-lexend text-3xl font-bold text-pcd-text-dark">Passaporte Competências Digitais</h2>
+                    <p class="mt-3 text-lg text-pcd-text-light">Escolha uma competência para ver as experiências de aprendizagem disponíveis.</p>
+                    
+                    <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+                        <div class="group cursor-pointer rounded-2xl p-4 text-center bg-pcd-card-bg shadow-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300"><div class="w-16 h-16 bg-pcd-roxo rounded-xl flex items-center justify-center mx-auto group-hover:bg-pcd-blue transition-colors duration-300 pointer-events-none"><svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect x="4" y="12" width="16" height="8" rx="2"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M12 20v-4"/></svg></div><h3 class="mt-4 font-lexend font-medium text-pcd-text-dark pointer-events-none">IA e Programação</h3></div>
+                        <div class="rounded-2xl p-4 text-center bg-pcd-bg-soft border border-pcd-border shadow-sm cursor-not-allowed"><div class="w-16 h-16 bg-gray-200 rounded-xl flex items-center justify-center mx-auto pointer-events-none"><svg class="w-8 h-8 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 12H19c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2.5"/><path d="M17 12h-1a2 2 0 0 0-2 2v4c0 1.1.9 2 2 2h1"/><path d="M21 12V7c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h3"/><path d="M12 12V3c0-1.1-.9-2-2-2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h3"/></svg></div><h3 class="mt-4 font-lexend font-medium text-gray-500 pointer-events-none">Computador</h3></div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Coluna da Community Sidebar -->
+            <aside class="lg:col-span-4 py-10">
+                <div class="sticky top-28 space-y-12">
+                    <div>
+                        <h2 class="font-lexend text-xl font-semibold mb-4 text-pcd-text-dark">A Minha Jornada</h2>
+                        <div class="p-5 bg-gradient-to-br from-pcd-blue to-pcd-roxo rounded-2xl text-center shadow-lg">
+                            <div class="relative w-36 h-36 mx-auto"><svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36"><circle class="text-white/40" cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="3"></circle><circle class="text-white" cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="75, 100" stroke-linecap="round" style="transition: stroke-dasharray 0.5s ease;"></circle></svg><div class="absolute inset-0 flex flex-col items-center justify-center"><span class="text-4xl">🚀</span><span class="font-bold text-white text-3xl">75</span><span class="text-xs text-purple-200 tracking-wider mt-0.5">PONTOS</span></div></div>
+                            <p class="mt-4 font-semibold text-white text-lg">Nível 1: Explorador Digital</p>
+                        </div>
+                    </div>
+                    <div class="bg-pcd-card-bg p-6 rounded-2xl shadow-card">
+                        <h2 class="font-lexend text-xl font-semibold text-pcd-text-dark mb-5">Dê o seu reconhecimento a:</h2>
+                        <div class="flex -space-x-3 justify-center"><img class="inline-block h-12 w-12 rounded-full ring-2 ring-white hover:ring-pcd-blue transition-all transform hover:scale-110 cursor-pointer object-cover" src="https://placehold.co/100x100/17A2B8/FFFFFF?text=A" alt="Avatar da Ana" title="Ana"><img class="inline-block h-12 w-12 rounded-full ring-2 ring-white hover:ring-pcd-blue transition-all transform hover:scale-110 cursor-pointer object-cover" src="https://placehold.co/100x100/28A745/FFFFFF?text=J" alt="Avatar do João" title="João"><img class="inline-block h-12 w-12 rounded-full ring-2 ring-white hover:ring-pcd-blue transition-all transform hover:scale-110 cursor-pointer object-cover" src="https://placehold.co/100x100/FFC107/FFFFFF?text=M" alt="Avatar da Maria" title="Maria"><a href="#" class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-pcd-bg-soft text-sm font-semibold text-pcd-text-light hover:bg-gray-200 transition-colors ring-2 ring-white" title="Ver todos">+5</a></div>
+                    </div>
+                    <div class="bg-pcd-card-bg p-6 rounded-2xl shadow-card">
+                        <h2 class="font-lexend text-xl font-semibold text-pcd-text-dark mb-5">Feed de Atividades</h2>
+                        <ul class="space-y-5"><li class="flex items-start space-x-4"><span class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-green-100 text-lg">🏆</span><div><p class="text-sm text-pcd-text-dark">Concluiu a "Missão 1" e ganhou <span class="font-bold">100 pontos!</span></p><p class="text-xs text-pcd-text-light mt-0.5">há 5 minutos</p></div></li><li class="flex items-start space-x-4"><img class="h-10 w-10 rounded-full flex-shrink-0 object-cover" src="https://placehold.co/100x100/17A2B8/FFFFFF?text=A" alt="Avatar da Ana"><div><p class="text-sm text-pcd-text-dark"><span class="font-semibold">Ana</span> atribuiu-lhe o badge <span class="font-semibold text-pcd-roxo">"Ótima Ajuda"</span>.</p><p class="text-xs text-pcd-text-light mt-0.5">há 2 horas</p></div></li><li class="flex items-start space-x-4"><span class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-red-100 text-lg">🏅</span><div><p class="text-sm text-pcd-text-dark">Medalha Desbloqueada! Conquistou o badge <span class="font-semibold">"Explorador(a) Curioso(a)"</span>.</p><p class="text-xs text-pcd-text-light mt-0.5">ontem</p></div></li></ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
