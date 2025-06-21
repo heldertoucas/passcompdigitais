@@ -1,8 +1,3 @@
-Com certeza. Criar um ficheiro Markdown (`.md`) para documentar a arquitetura da base de dados é um passo essencial. Este documento servirá como a "planta" para a equipa de desenvolvimento e como registo central de todas as decisões que tomámos.
-
-Aqui está a estrutura completa da base de dados, pronta para ser guardada num ficheiro como `db_schema.md`.
-
------
 
 # Arquitetura da Base de Dados - Aplicação "Passaporte Competências Digitais"
 
@@ -77,7 +72,7 @@ Armazena o conteúdo de cada missão de aprendizagem, que pode ser reutilizado e
 | :--- | :--- | :--- | :--- |
 | `id` | `serial` | Primary Key | Identificador único da missão. |
 | `title` | `text` | Not Null | O título da missão. |
-| `rise_html_content` | `text` | | O conteúdo HTML completo exportado do Articulate Rise 360. |
+| `rise_html_content` | `text` | | O conteúdo HTML completo da missão (inspirado no estilo do Articulate Rise 360), armazenado diretamente na base de dados. |
 
 ### Tabela: `course_missions`
 
