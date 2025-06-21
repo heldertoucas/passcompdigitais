@@ -1,3 +1,4 @@
+
 Análise do Projeto: Duas Perspetivas
 ====================================
 
@@ -32,9 +33,9 @@ A nossa arquitetura de conteúdo, embora invisível para o utilizador, foi desen
 
 -   Turmas: A instância específica de um curso, com datas e formadores.
 
--   Missões (com conteúdo Rise 360): Os blocos de aprendizagem modulares.
+-   Missões (com conteúdo HTML armazenado na base de dados): Os blocos de aprendizagem modulares.
 
-Esta estrutura permite-nos adaptar a plataforma a qualquer cenário --- presencial, e-learning ou híbrido --- sem alterar a experiência central do utilizador. O módulo Rise 360 de cada missão serve simultaneamente como o guião para o formador, a atividade para o formando e o manual de consulta pós-sessão, criando uma experiência de aprendizagem verdadeiramente integrada.
+Esta estrutura permite-nos adaptar a plataforma a qualquer cenário --- presencial, e-learning ou híbrido --- sem alterar a experiência central do utilizador. O módulo de conteúdo HTML de cada missão, inspirado no estilo e na estrutura pedagógica do Articulate Rise 360, serve simultaneamente como o guião para o formador, a atividade para o formando e o manual de consulta pós-sessão, criando uma experiência de aprendizagem verdadeiramente integrada.
 
 Em suma, esta aplicação não é apenas uma ferramenta, é um ambiente desenhado para capacitar (empower), reconhecer o valor de cada formando e criar uma comunidade de aprendizagem vibrante e conectada.
 
@@ -55,7 +56,7 @@ Do ponto de vista técnico, o projeto assenta numa arquitetura JAMstack (JavaScr
 
 A estrutura da base de dados foi desenhada para ser relacional e flexível:
 
--   Modularidade de Conteúdo: A separação entre `courses` e `missions`, ligadas por uma tabela de junção `course_missions`, é intencional. Permite-nos, no futuro, reutilizar uma mesma missão em vários cursos diferentes, sem duplicar conteúdo. Armazenar o HTML do Rise 360 diretamente no campo `rise_html_content` torna cada missão auto-suficiente.
+-   Modularidade de Conteúdo: A separação entre `courses` e `missions`, ligadas por uma tabela de junção `course_missions`, é intencional. Permite-nos, no futuro, reutilizar uma mesma missão em vários cursos diferentes, sem duplicar conteúdo. Armazenar o conteúdo HTML de cada missão (cujo design e estrutura são inspirados no Articulate Rise 360) diretamente no campo `rise_html_content` da base de dados Supabase torna cada missão auto-suficiente e facilita a sua gestão.
 
 -   Gestão de Turmas: A introdução da tabela `classes` e `enrollments` é o que permite que a aplicação suporte a complexidade do mundo real, gerindo múltiplas turmas para o mesmo curso, cada uma com o seu código de acesso, datas e formadores.
 
