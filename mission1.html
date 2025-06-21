@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS (para que o conteúdo seja auto-suficiente) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Lexend e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Configuração do Tema -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'lexend': ['Lexend', 'sans-serif'],
+                    },
+                    colors: {
+                        'pcd-page-bg': '#F8F9FE', 'pcd-card-bg': '#FFFFFF',
+                        'pcd-bg-soft': '#F9FAFB', 'pcd-border': '#F3F4F6',
+                        'pcd-text-dark': '#111827', 'pcd-text-light': '#6B7280',
+                        'pcd-blue': '#2563EB', 'pcd-roxo': '#7C3AED',
+                        'pcd-green': '#10B981', 'pcd-yellow': '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .rise-block { margin-bottom: 3.5rem; }
+        .rise-title { font-family: 'Lexend', sans-serif; font-size: 1.875rem; font-weight: 600; color: #111827; margin-bottom: 1rem; }
+        .rise-text { font-size: 1.125rem; color: #4B5563; line-height: 1.7; }
+        .rise-divider { border-color: #E5E7EB; margin: 3.5rem 0; }
+        .rise-note { background-color: #EFF6FF; border-left: 4px solid #2563EB; padding: 1.5rem; border-radius: 0.5rem; }
+        .rise-knowledge-check { background-color: #F9FAFB; border: 1px solid #F3F4F6; padding: 2rem; border-radius: 1rem; margin-top: 2rem; }
+    </style>
+</head>
+<body class="p-8 md:p-12 font-sans bg-pcd-card-bg">
+
+    <!-- Bloco 1: Boas-vindas -->
+    <div class="rise-block text-center">
+        <h1 class="font-lexend text-4xl md:text-5xl font-bold text-pcd-text-dark">Missão 1: O Que é a Inteligência Artificial?</h1>
+        <p class="mt-4 text-xl text-pcd-text-light max-w-3xl mx-auto">Bem-vindo(a) à sua primeira missão! Vamos juntos desmistificar a "magia" da IA e descobrir como estas ferramentas nos podem ajudar no dia a dia.</p>
+    </div>
+
+    <hr class="rise-divider">
+
+    <!-- Bloco 2: Desmistificar a Magia da IA -->
+    <div class="rise-block">
+        <h2 class="rise-title">Desmistificar a "Magia" da IA</h2>
+        <p class="rise-text">Para começar a nossa viagem, vamos ver um vídeo muito curto onde os próprios criadores de algumas das mais famosas IAs nos explicam a ideia principal por detrás da tecnologia.</p>
+        
+        <!-- Video Embed -->
+        <div class="mt-6 aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-lg border border-pcd-border">
+            <iframe src="https://www.youtube.com/embed/X-AWdfSFCHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Pontos-chave do Vídeo (Acordeão) -->
+        <div class="mt-8 space-y-3">
+            <details class="group bg-pcd-bg-soft p-4 rounded-lg cursor-pointer">
+                <summary class="flex items-center justify-between font-semibold text-pcd-text-dark">
+                    O que são "Grandes Modelos de Linguagem"?
+                    <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <p class="mt-2 text-pcd-text-light">São sistemas treinados com uma quantidade imensa de informação (como grande parte da Internet) para compreender e gerar texto.</p>
+            </details>
+            <details class="group bg-pcd-bg-soft p-4 rounded-lg cursor-pointer">
+                <summary class="flex items-center justify-between font-semibold text-pcd-text-dark">
+                    Como é que a IA "aprende"?
+                </summary>
+                <p class="mt-2 text-pcd-text-light">Através de probabilidades. O sistema analisa qual a palavra ou pedaço de palavra (um "token") que tem mais probabilidade de vir a seguir, com base no contexto que já tem. É como quando o nosso cérebro completa a frase "pão com..." com "manteiga".</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- Bloco 3: Jogo da Construção em Cadeia -->
+    <div class="rise-block">
+        <div class="rise-note">
+            <h3 class="font-lexend text-xl font-semibold text-pcd-blue mb-2">Atividade em Grupo: Jogo da "Construção em Cadeia"</h3>
+            <p class="text-pcd-text-dark">Na sessão presencial, vamos agora fazer um jogo em grupo para sentirmos na pele como a IA "pensa". Vamos construir uma frase, palavra por palavra, votando na mais provável a cada passo. Isto ajuda-nos a perceber que a IA precisa de contexto para gerar respostas com lógica.</p>
+        </div>
+    </div>
+
+    <hr class="rise-divider">
+
+    <!-- Bloco 4: A Primeira Conversa com a IA -->
+    <div class="rise-block">
+        <h2 class="rise-title">A Primeira Conversa com a IA</h2>
+        <p class="rise-text">Muitas vezes, o mais difícil é começar. O que podemos pedir a um assistente destes? Abaixo estão alguns exemplos para quebrar o gelo e mostrar a sua versatilidade.</p>
+        
+        <!-- Flashcards de Prompts -->
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="p-6 bg-pcd-bg-soft rounded-xl border border-pcd-border">
+                <p class="font-semibold text-pcd-text-dark">Para ser criativo:</p>
+                <p class="mt-2 text-pcd-text-light italic">"Atua como um explorador do século XV a descrever um telemóvel pela primeira vez no seu diário de bordo."</p>
+            </div>
+            <div class="p-6 bg-pcd-bg-soft rounded-xl border border-pcd-border">
+                <p class="font-semibold text-pcd-text-dark">Para desbloquear ideias:</p>
+                <p class="mt-2 text-pcd-text-light italic">"Gostei da tua resposta. Que outras perguntas interessantes posso fazer sobre este tema?"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bloco 5: Explorar a App -->
+    <div class="rise-block">
+        <div class="rise-note bg-pcd-roxo/10 border-pcd-roxo">
+            <h3 class="font-lexend text-xl font-semibold text-pcd-roxo mb-2">Desafio Prático: A "Fábrica de Prompts"</h3>
+            <p class="text-pcd-text-dark">Na sessão, vamos explorar a aplicação de apoio ao curso em <a href="https://bit.ly/pass10fabricaprompts" target="_blank" class="font-semibold underline">bit.ly/pass10fabricaprompts</a>. A sua missão será explorar a "Fábrica de Prompts", copiar uma das sugestões e ter a sua primeira conversa livre com o Gemini.</p>
+        </div>
+    </div>
+
+    <!-- Bloco 6: Conhecimento e Conclusão -->
+    <div class="rise-block">
+        <h2 class="rise-title">Expandir Horizontes e Conclusão</h2>
+        <p class="rise-text">Como vimos, a lógica de "conversar" com a IA é a mesma em todas as ferramentas (Gemini, ChatGPT, Copilot). O que aprendemos aqui serve para todas. A capacidade de transformar informação complexa em conhecimento prático é uma das ferramentas mais importantes que podemos ter no mundo digital.</p>
+        
+        <!-- Knowledge Check Final -->
+        <div class="rise-knowledge-check">
+            <p class="font-semibold text-pcd-text-dark mb-3">Verificação de Conhecimentos</p>
+            <p class="mb-4 text-pcd-text-light">Um amigo diz-lhe: "A IA é demasiado complicada, é como magia!". Com base no que aprendeu na Missão 1, qual das seguintes seria a melhor resposta para o ajudar a perceber a ideia principal?</p>
+            <div class="space-y-3">
+                <button class="w-full text-left p-4 bg-pcd-card-bg border border-pcd-border rounded-lg hover:border-pcd-blue hover:bg-pcd-blue/5 transition">A) "Na verdade, ela funciona com base em probabilidades, calculando a palavra mais provável a seguir, como um jogo."</button>
+                <button class="w-full text-left p-4 bg-pcd-card-bg border border-pcd-border rounded-lg hover:border-pcd-blue hover:bg-pcd-blue/5 transition">B) "É um sistema muito complexo de regras lógicas que os programadores escrevem."</button>
+                <button class="w-full text-left p-4 bg-pcd-card-bg border border-pcd-border rounded-lg hover:border-pcd-blue hover:bg-pcd-blue/5 transition">C) "É um cérebro digital que pensa exatamente como um ser humano."</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bloco Final: Conclusão da Missão -->
+    <div class="text-center mt-16">
+        <button class="bg-pcd-blue text-white font-bold py-4 px-8 rounded-xl hover:bg-blue-700 transition-all duration-200 shadow-lg shadow-blue-500/30 transform hover:-translate-y-1">
+            CONCLUIR MISSÃO 1
+        </button>
+    </div>
+
+</body>
+</html>
