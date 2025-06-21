@@ -1,3 +1,4 @@
+
 Plano de Implementação: Aplicação "Passaporte Competências Digitais" (MVP v1.0)
 ===============================================================================
 
@@ -49,7 +50,7 @@ Este documento detalha o plano de implementação para o Produto Mínimo Viável
 
 -   3.3. Desenvolvimento da Página de Aprendizagem Unificada:
 
-    -   Descrição: O coração da experiência de aprendizagem. Vamos construir a página que contém o "átrio" do curso (cabeçalho, painel de estado e lista de missões). A parte mais complexa será programar a lógica que verifica se o utilizador já ativou o curso para mostrar ou o campo do código ou o seu progresso, e o componente que consegue carregar e mostrar o conteúdo HTML do Articulate Rise diretamente na página.
+    -   Descrição: O coração da experiência de aprendizagem. Vamos construir a página que contém o "átrio" do curso (cabeçalho, painel de estado e lista de missões). A parte mais complexa será programar a lógica que verifica se o utilizador já ativou o curso para mostrar ou o campo do código ou o seu progresso, e o componente que consegue carregar e mostrar o conteúdo HTML das missões (inspirado no estilo do Articulate Rise 360 e armazenado na base de dados Supabase) diretamente na página.
 
 -   3.4. Desenvolvimento da Community Sidebar:
 
@@ -61,11 +62,11 @@ Este documento detalha o plano de implementação para o Produto Mínimo Viável
 
 -   4.1. Desenvolvimento dos Módulos E-learning:
 
-    -   Descrição: Esta é uma tarefa de produção de conteúdo. Usando o software Articulate Rise 360, vamos construir os 5 módulos de missão que planeámos detalhadamente, incluindo os textos, vídeos, quizzes e interações. No final, cada módulo será exportado como um pacote de ficheiros HTML.
+    -   Descrição: Esta é uma tarefa de produção de conteúdo. Vamos construir os 5 módulos de missão que planeámos detalhadamente, incluindo textos, vídeos, quizzes e interações. O design e a estrutura pedagógica destes módulos serão inspirados no Articulate Rise 360, resultando em conteúdo HTML interativo. Este conteúdo HTML será criado e preparado para ser armazenado na base de dados.
 
 -   4.2. "Sementeira" da Base de Dados (Seeding):
 
-    -   Descrição: "Semear" a base de dados significa populá-la com os dados iniciais para que a aplicação não comece vazia. Vamos pegar no ficheiro de dados JSON que preparámos e usá-lo para criar as entradas iniciais: o curso `PASS10`, as suas 5 missões, os 5 badges, etc. A parte mais importante será fazer o upload do conteúdo HTML de cada módulo Rise para a coluna `rise_html_content` na tabela `missions`.
+    -   Descrição: "Semear" a base de dados significa populá-la com os dados iniciais para que a aplicação não comece vazia. Vamos pegar no ficheiro de dados JSON que preparámos e usá-lo para criar as entradas iniciais: o curso `PASS10`, as suas 5 missões, os 5 badges, etc. A parte mais importante será armazenar o conteúdo HTML de cada módulo de missão na coluna `rise_html_content` da tabela `missions`, diretamente na base de dados Supabase.
 
 -   4.3. Criação de Ativos Visuais:
 
