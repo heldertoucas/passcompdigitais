@@ -17,25 +17,3 @@ export async function getUserProfile(userId) {
 
   return data;
 }
-
-/**
- * Obtém as notificações para o utilizador atual.
- */
-export async function getUserNotifications() {
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return [];
-
-  const { data, error } = await supabase
-    .from('notifications')
-    .select('*')
-    .eq('recipient_user_id', user.id)
-    .order('created_at', { ascending: false })
-    .limit(10); // Limitamos a 10 para começar
-
-  if (error) {
-    console.error('Erro ao obter notificações:', error);
-    return [];
-  }
-
-  return data;
-}

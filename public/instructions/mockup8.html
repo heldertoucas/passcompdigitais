@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" /> <!-- Placeholder icon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passaporte Competências Digitais | A sua Jornada de Aprendizagem</title>
+    <meta name="description" content="Descubra cursos, desafios e projetos desenhados para si. Desenvolva as suas competências e navegue no mundo digital com mais confiança." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
+        .font-lexend { font-family: 'Lexend', sans-serif; }
+        .animated-section { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .animated-section.is-visible { opacity: 1; transform: translateY(0); }
+        .hero-content-parallax { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+        .drawer-transition { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+            "react": "https://esm.sh/react@18.2.0",
+            "react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="module">
+        import React from 'react';
+        import ReactDOM from 'react-dom/client';
+
+        const e = React.createElement;
+
+        // --- COMPONENTES AUXILIARES ---
+        const AnimatedSection = ({ children, className = '', tag = 'div', delay, id }) => {
+            const [isVisible, setIsVisible] = React.useState(false);
+            const elementRef = React.useRef(null);
+            React.useEffect(() => {
+                const observer = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                        observer.unobserve(elementRef.current);
+                    }
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                if (elementRef.current) observer.observe(elementRef.current);
+                return () => { if (elementRef.current) observer.unobserve(elementRef.current); };
+            }, []);
+            return e(tag, { ref: elementRef, id, className: `${className} animated-section ${isVisible ? 'is-visible' : ''}`, style: { transitionDelay: delay } }, children);
+        };
+        const scrollToSection = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
+        // --- COMPONENTES DA UI ---
+
+        const Header = ({ isScrolled }) => {
+            const headerClasses = `fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'}`;
+            const linkClasses = `transition-colors duration-300 text-sm font-medium ${isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'}`;
+            const titleClasses = `text-xl font-bold font-lexend transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`;
+            const iconClasses = `transition-colors duration-300 ${isScrolled ? 'text-blue-600' : 'text-white'}`;
+            
+            return e('header', { className: headerClasses },
+                e('div', { className: 'container mx-auto px-4 sm:px-6 lg:px-8' },
+                    e('div', { className: 'flex items-center justify-between h-16' },
+                        e('a', { href: '#', onClick: (ev) => { ev.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }, className: 'flex items-center gap-3' },
+                            e('svg', { xmlns: "http://www.w3.org/2000/svg", width: "28", height: "28", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className: iconClasses }, e('path', { d: "M12 2L2 7l10 5 10-5-10-5z" }), e('path', { d: "M2 17l10 5 10-5" }), e('path', { d: "M2 12l10 5 10-5" })),
+                            e('span', { className: titleClasses }, 'Passaporte Digital')
+                        ),
+                        e('nav', { className: 'hidden md:block' },
+                            e('ul', { className: 'flex space-x-8' },
+                                e('li', null, e('a', { href: '#catalog', onClick: (ev) => { ev.preventDefault(); scrollToSection('catalog') }, className: linkClasses }, 'Competências')),
+                                e('li', null, e('a', { href: '#footer', onClick: (ev) => { ev.preventDefault(); scrollToSection('footer') }, className: linkClasses }, 'Sobre'))
+                            )
+                        )
+                    )
+                )
+            );
+        };
+
+        const HeroSection = () => {
+             const heroContentRef = React.useRef(null);
+            React.useEffect(() => {
+                const handleScroll = () => {
+                    if (heroContentRef.current) {
+                        const scrollPos = window.scrollY;
+                        const opacity = Math.max(1 - (scrollPos / 400), 0);
+                        const translateY = scrollPos * 0.4;
+                        heroContentRef.current.style.opacity = opacity.toString();
+                        heroContentRef.current.style.transform = `translateY(${translateY}px)`;
+                    }
+                };
+                window.addEventListener('scroll', handleScroll, { passive: true });
+                handleScroll();
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            return e('section', { id: 'hero', className: 'relative h-screen flex items-center justify-center overflow-hidden' },
+                e('div', { className: 'absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-teal-500 z-0' }),
+                e('div', { className: 'absolute inset-0 bg-black/30 z-0' }),
+                e('div', { ref: heroContentRef, className: 'container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center hero-content-parallax' },
+                    e('h1', { className: 'text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-lexend' }, 'A sua Jornada de Aprendizagem Digital Começa Aqui'),
+                    e('p', { className: 'text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed' }, 'Descubra cursos e desafios desenhados para si. Desenvolva as suas competências e navegue no mundo digital com mais confiança.'),
+                    e('a', { href: '#catalog', onClick: (ev) => { ev.preventDefault(); scrollToSection('catalog') }, className: "inline-block px-8 py-3 bg-white text-blue-600 rounded-full font-medium hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1" }, 'Explorar Competências')
+                )
+            );
+        };
+
+        const CatalogSection = () => {
+            const skills = [{ id: 10, title: 'IA e Programação', icon: e('svg', { xmlns: "http://www.w3.org/2000/svg", width: "32", height: "32", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className: "text-purple-600" }, e('path', { d: "M12 8V4H8" }), e('rect', { x: "4", y: "12", width: "16", height: "8", rx: "2" }), e('path', { d: "M2 12h2" }), e('path', { d: "M20 12h2" }), e('path', { d: "M12 20v-4" })) }];
+            return e(AnimatedSection, { tag: 'section', id: 'catalog', className: 'py-20 bg-white' },
+                e('div', { className: 'container mx-auto px-4 sm:px-6 lg:px-8' },
+                    e('div', { className: 'text-center' },
+                        e('h2', { className: 'text-3xl md:text-4xl font-bold font-lexend mb-4' }, 'Passaporte Competências Digitais'),
+                        e('p', { className: 'text-lg text-gray-600 max-w-3xl mx-auto mb-16' }, 'Explore as nossas 10 competências fundamentais.')
+                    ),
+                    e('div', { className: 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8' },
+                        skills.map((skill, index) => e(AnimatedSection, { key: skill.id, delay: `${index * 0.05}s`, tag: 'div', className: 'bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center cursor-pointer' },
+                            e('div', { className: 'bg-purple-50 p-4 rounded-xl mb-5' }, skill.icon),
+                            e('h3', { className: 'text-lg font-semibold font-lexend' }, skill.title)
+                        )),
+                        ...Array(9).fill(0).map((_, i) => e('div', { key: i, className: 'bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col items-center text-center opacity-60' }, e('div', { className: 'bg-gray-200 p-4 rounded-xl w-16 h-16 mb-5' }), e('div', { className: 'h-4 bg-gray-200 rounded w-3/4' })))
+                    )
+                )
+            );
+        };
+        
+        const CommunityDrawer = ({ isOpen, onClose }) => {
+            return e(React.Fragment, null,
+                // Overlay
+                e('div', { 
+                    className: `fixed inset-0 bg-black/30 z-50 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}` ,
+                    onClick: onClose
+                }),
+                // Drawer Content
+                e('aside', { className: `fixed top-0 right-0 h-full w-80 sm:w-96 bg-white shadow-2xl z-50 p-8 overflow-y-auto drawer-transition ${isOpen ? 'transform translate-x-0' : 'transform translate-x-full'}` },
+                    e('div', { className: 'flex justify-between items-center mb-8' },
+                        e('h2', { className: 'text-2xl font-bold font-lexend' }, 'Comunidade'),
+                        e('button', { onClick: onClose, className: 'btn btn-sm btn-circle btn-ghost' }, '✕')
+                    ),
+                    e('div', { className: 'space-y-10' },
+                        // A Minha Jornada
+                        e('div', null, 
+                            e('h3', {className: 'text-lg font-semibold font-lexend mb-4'}, 'A sua Jornada'),
+                            e('div', {className: 'bg-gray-50 p-6 rounded-2xl text-center'},
+                                e('div', {className: "radial-progress text-blue-600 mx-auto", style: {"--value":75, "--size":"8rem", "--thickness": "0.75rem"}, role: "progressbar"}, 
+                                     e('div', {className: 'flex flex-col items-center justify-center h-full'}, e('span', {className:'text-4xl'}, '🚀'), e('span', {className:'font-bold text-sm text-gray-700'}, '75/100'))
+                                 ),
+                                 e('h3', {className:'text-lg font-semibold font-lexend mt-4'}, 'Nível 1: Rocket Points')
+                            )
+                        ),
+                        // Reconhecer Colegas
+                        e('div', null,
+                            e('h3', {className:'text-lg font-semibold font-lexend mb-4'}, 'Reconhecer Colegas'),
+                             e('div', {className: 'avatar-group -space-x-4 rtl:space-x-reverse'},
+                                e('div', {className: 'avatar border-2 border-white hover:border-blue-500 transition-all cursor-pointer'}, e('div', {className: 'w-12'}, e('img', {src: 'https://placehold.co/100x100/17A2B8/FFFFFF?text=A'}))),
+                                e('div', {className: 'avatar border-2 border-white hover:border-blue-500 transition-all cursor-pointer'}, e('div', {className: 'w-12'}, e('img', {src: 'https://placehold.co/100x100/28A745/FFFFFF?text=J'}))),
+                                e('div', {className: 'avatar border-2 border-white hover:border-blue-500 transition-all cursor-pointer'}, e('div', {className: 'w-12'}, e('img', {src: 'https://placehold.co/100x100/FFC107/FFFFFF?text=M'}))),
+                                e('div', {className: 'avatar placeholder border-2 border-white'}, e('div', {className: 'w-12 bg-gray-200 text-gray-500'}, e('span', null, '+5')))
+                             )
+                        ),
+                        // Feed de Atividades
+                        e('div', null,
+                             e('h3', {className:'text-lg font-semibold font-lexend mb-4'}, 'Feed de Atividades'),
+                             e('ul', {className: 'space-y-4'},
+                                e('li', {className: 'flex items-center gap-3'}, e('span', {className:'bg-green-100 p-2 rounded-full'}, '🏆'), e('p', {className:'text-sm'}, 'Ganhou 100 pontos!')),
+                                e('li', {className: 'flex items-center gap-3'}, e('span', {className:'bg-red-100 p-2 rounded-full'}, '🏅'), e('p', {className:'text-sm'}, 'Badge "Explorador"')),
+                                e('li', {className: 'flex items-center gap-3'}, e('img', {src: 'https://placehold.co/100x100/17A2B8/FFFFFF?text=A', className: 'w-8 h-8 rounded-full'}), e('p', {className:'text-sm'}, 'Ana deu-lhe um badge'))
+                             )
+                        )
+                    )
+                )
+            );
+        };
+        
+        const Footer = () => {
+             return e('footer', {id: 'footer', className: 'bg-gray-900 text-white py-12'},
+                 e('div', {className: 'container mx-auto px-4 sm:px-6 lg:px-8 text-center'},
+                     e('h3', {className: 'text-2xl font-bold mb-2 font-lexend'}, 'Passaporte Competências Digitais'),
+                     e('p', {className: 'text-gray-400 max-w-md mx-auto mb-6'}, 'Uma iniciativa do Programa Municipal para a Literacia Digital da Câmara Municipal de Lisboa.'),
+                     e('p', {className: 'text-gray-500 text-sm'}, `© ${new Date().getFullYear()} Passaporte Competências Digitais. Todos os direitos reservados.`)
+                 )
+             );
+        };
+
+        const App = () => {
+            const [isHeaderScrolled, setIsHeaderScrolled] = React.useState(false);
+            const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+
+            React.useEffect(() => {
+                const handleScroll = () => setIsHeaderScrolled(window.scrollY > 50);
+                window.addEventListener('scroll', handleScroll, { passive: true });
+                handleScroll();
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            return e('div', { className: 'bg-white' },
+                e(Header, { isScrolled: isHeaderScrolled }),
+                e('main', null,
+                    e(HeroSection),
+                    e(CatalogSection)
+                ),
+                e(Footer),
+                // Botão Flutuante e Drawer
+                e('button', {
+                    onClick: () => setIsDrawerOpen(true),
+                    className: 'fixed bottom-6 right-6 btn btn-primary btn-circle shadow-lg transform transition-transform hover:scale-105',
+                    'aria-label': 'Abrir Comunidade'
+                 }, e('svg', { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round"}, e('path', { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" }), e('circle', { cx: "9", cy: "7", r: "4" }), e('path', { d: "M22 21v-2a4 4 0 0 0-3-3.87" }), e('path', { d: "M16 3.13a4 4 0 0 1 0 7.75" }))),
+                e(CommunityDrawer, { isOpen: isDrawerOpen, onClose: () => setIsDrawerOpen(false) })
+            );
+        };
+
+        const rootElement = document.getElementById('root');
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(e(React.StrictMode, null, e(App, null)));
+    </script>
+</body>
+</html>

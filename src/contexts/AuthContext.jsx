@@ -1,49 +1,13 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { supabase } from '../services/supabase';
+import React, { createContext, useContext } from 'react';
 import { signUp as apiSignUp, signIn as apiSignIn, signOut as apiSignOut } from '../services/apiAuth.js';
-import { getUserProfile } from '../services/apiUser.js'; // 1. Importar a nova função
 
 const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-  const [profile, setProfile] = useState(null); // 2. Adicionar estado para o perfil
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const setupUser = async (authUser) => {
-      if (authUser) {
-        const userProfile = await getUserProfile(authUser.id);
-        setProfile(userProfile);
-        setUser(authUser);
-      } else {
-        setProfile(null);
-        setUser(null);
-      }
-      setLoading(false);
-    };
-
-    const getSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      await setupUser(session?.user);
-    };
-
-    getSession();
-
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        await setupUser(session?.user);
-      }
-    );
-
-    return () => {
-      authListener?.subscription.unsubscribe();
-    };
-  }, []);
-
+// O Provider agora é um componente simples que recebe o estado como propriedade
+export function AuthProvider({ user, profile, loading, children }) {
   const value = {
     user,
-    profile, // 3. Adicionar o perfil ao 'value' do contexto
+    profile,
     loading,
     signUp: apiSignUp,
     signIn: apiSignIn,

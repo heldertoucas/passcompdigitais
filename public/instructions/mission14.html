@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Lexend e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Configuração do Tema -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'lexend': ['Lexend', 'sans-serif'],
+                    },
+                    colors: {
+                        'rise-bg': '#FFFFFF', 'rise-bg-soft': '#F9FAFB',
+                        'rise-border': '#E5E7EB', 'rise-text-dark': '#1F2937',
+                        'rise-text-light': '#6B7280', 'rise-blue': '#3B82F6',
+                        'rise-roxo': '#8B5CF6', 'rise-green': '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .rise-container { max-width: 800px; margin: auto; }
+        .rise-block { margin-bottom: 4rem; }
+        .rise-title { font-family: 'Lexend', sans-serif; font-size: 2.25rem; font-weight: 600; color: #1F2937; margin-bottom: 1.5rem; text-align: center; }
+        .rise-subtitle { font-family: 'Lexend', sans-serif; font-size: 1.5rem; font-weight: 600; color: #1F2937; margin-bottom: 1rem; }
+        .rise-text { font-size: 1.125rem; color: #4B5563; line-height: 1.8; }
+        .rise-divider { margin: 4rem 0; text-align: center; }
+        .rise-divider::before { content: '...'; color: #D1D5DB; font-size: 1.5rem; letter-spacing: 0.5em; }
+        .rise-accordion { background-color: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.5rem; margin-bottom: 0.75rem; }
+        .rise-accordion summary { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; font-weight: 600; color: #374151; cursor: pointer; }
+        .rise-accordion summary::after { content: '+'; font-size: 1.5rem; font-weight: 300; transition: transform 0.2s ease-in-out; }
+        .rise-accordion[open] summary::after { transform: rotate(45deg); }
+        .rise-accordion div { padding: 0 1.5rem 1.5rem 1.5rem; color: #6B7280; }
+        .activity-card { background-color: #F9FAFB; border: 1px solid #E5E7EB; padding: 2rem; border-radius: 1rem; }
+        .learning-card { background-color: #EFF6FF; border-left: 4px solid #3B82F6; padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem; }
+        .knowledge-check { background-color: #F9FAFB; border: 1px solid #E5E7EB; padding: 2rem; border-radius: 1rem; margin-top: 2rem; }
+    </style>
+</head>
+<body class="bg-rise-bg font-sans">
+
+<div class="rise-container p-4 md:p-8">
+
+    <!-- Bloco 1: Boas-vindas -->
+    <div class="rise-block text-center">
+        <h1 class="rise-title">Missão 1: O Que é a Inteligência Artificial?</h1>
+        <p class="mt-4 text-xl text-rise-text-light max-w-3xl mx-auto">Bem-vindo(a) à sua primeira missão! Vamos juntos desmistificar a "magia" da IA e descobrir como estas ferramentas nos podem ajudar no dia a dia.</p>
+    </div>
+
+    <div class="rise-divider"></div>
+
+    <!-- Bloco 2: Aprender: Desmistificar a "Magia" da IA -->
+    <div class="rise-block">
+        <h2 class="rise-subtitle">Aprender: Desmistificar a "Magia" da IA</h2>
+        <p class="rise-text">Para começar, vamos analisar um recurso onde os próprios criadores de algumas das mais famosas IAs nos explicam a ideia principal por detrás da tecnologia.</p>
+        
+        <div class="mt-8">
+            <h3 class="font-lexend font-semibold text-lg mb-4">Descobrir: A Explicação dos Criadores</h3>
+            <div class="rounded-lg overflow-hidden shadow-lg border border-rise-border">
+                <div class="aspect-w-16 aspect-h-9 bg-black">
+                    <iframe src="https://www.youtube.com/embed/X-AWdfSFCHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10">
+            <h3 class="font-lexend font-semibold text-lg mb-4">Aprender: Os Conceitos-Chave</h3>
+            <details class="rise-accordion">
+                <summary>O que são "Grandes Modelos de Linguagem"?</summary>
+                <div>São sistemas treinados com uma quantidade imensa de informação (como grande parte da Internet) para compreender e gerar texto.</div>
+            </details>
+            <details class="rise-accordion">
+                <summary>Como é que a IA "aprende"?</summary>
+                <div>Através de probabilidades. O sistema analisa qual a palavra ou pedaço de palavra (um "token") que tem mais probabilidade de vir a seguir, com base no contexto que já tem. É como quando o nosso cérebro completa a frase "pão com..." com "manteiga".</div>
+            </details>
+        </div>
+    </div>
+    
+    <!-- Bloco 3: Desafio Digital: Como "Pensa" a IA? -->
+    <div class="rise-block">
+        <div class="activity-card">
+            <div class="flex items-start justify-between">
+                <h2 class="rise-subtitle flex items-center">
+                    <svg class="w-7 h-7 mr-3 text-rise-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Desafio Digital: Como "Pensa" a IA?
+                </h2>
+                <div class="flex space-x-2 flex-shrink-0 mt-1">
+                    <span class="text-xs font-medium bg-gray-200 text-gray-700 px-2.5 py-1 rounded-full">Em Grupo</span>
+                    <span class="text-xs font-medium bg-gray-200 text-gray-700 px-2.5 py-1 rounded-full">Presencial</span>
+                </div>
+            </div>
+            <p class="rise-text mt-2">Como é que a IA constrói uma frase? Participe numa atividade colaborativa para descobrir o seu processo, palavra por palavra, votando na mais provável a cada passo.</p>
+            <div class="learning-card">
+                <h3 class="font-lexend font-semibold text-rise-blue mb-2">Principais Aprendizagens</h3>
+                <p>A IA Generativa não sabe o que vai dizer. Ela olha para o texto que já existe e "calcula" a palavra seguinte mais provável. Por isso, **o contexto é o elemento mais importante** para que as suas respostas tenham lógica e coerência.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rise-divider"></div>
+
+    <!-- Bloco 4: Aprender: A Primeira Conversa com a IA -->
+    <div class="rise-block">
+        <h2 class="rise-subtitle">Aprender: A Primeira Conversa com a IA</h2>
+        <p class="rise-text">Muitas vezes, o mais difícil é começar. Para que serve um assistente destes? Explore alguns exemplos de pedidos (prompts) que mostram a sua versatilidade.</p>
+        
+        <div class="mt-8 space-y-4">
+            <details class="rise-accordion">
+                <summary>Experimente ser criativo</summary>
+                <div>Peça-lhe algo inesperado. Exemplo: <i>"Atua como um explorador do século XV a descrever um telemóvel pela primeira vez no seu diário de bordo."</i></div>
+            </details>
+            <details class="rise-accordion">
+                <summary>Use-o para desbloquear ideias</summary>
+                <div>Peça ajuda para continuar uma conversa. Exemplo: <i>"Gostei da tua resposta. Que outras perguntas interessantes posso fazer sobre este tema?"</i></div>
+            </details>
+             <details class="rise-accordion">
+                <summary>Peça ajuda para tarefas práticas</summary>
+                <div>Use-o para resolver um problema do dia a dia. Exemplo: <i>"Dá-me 3 dicas simples para cuidar de uma planta de interior para quem não tem experiência nenhuma."</i></div>
+            </details>
+        </div>
+    </div>
+    
+    <!-- Bloco 5: Desafio Digital: A "Fábrica de Prompts" -->
+    <div class="rise-block">
+        <div class="bg-rise-roxo/5 border-l-4 border-rise-roxo p-6 rounded-md">
+            <h3 class="font-lexend text-xl font-semibold text-rise-roxo mb-2">Desafio Digital: A "Fábrica de Prompts"</h3>
+            <p class="text-gray-700 mb-4">Agora é a sua vez! Aceda à nossa aplicação de apoio "Desafios Digitais" para encontrar uma lista de prompts prontos a usar. A sua missão é explorar a "Fábrica de Prompts", copiar uma das sugestões e ter a sua primeira conversa livre com o Gemini.</p>
+            <a href="https://bit.ly/pass10fabricaprompts" target="_blank" class="inline-block bg-rise-roxo text-white font-semibold py-2 px-5 rounded-lg hover:bg-opacity-90 transition">
+                Aceder aos Desafios Digitais
+            </a>
+        </div>
+    </div>
+
+    <div class="rise-divider"></div>
+
+    <!-- Bloco 6: Descobrir as Aplicações no Dia a Dia -->
+    <div class="rise-block">
+        <h2 class="rise-subtitle">Descobrir: Aplicações no Dia a Dia</h2>
+        <p class="rise-text">Com o que já vimos, que utilidades práticas conseguimos imaginar para a IA no nosso quotidiano? As possibilidades são imensas.</p>
+        <div class="knowledge-check">
+            <p class="font-semibold text-rise-text-dark mb-3">Verificação de Conhecimentos</p>
+            <p class="mb-4 text-rise-text-light">Associe cada tarefa do dia a dia ao tipo de ajuda que a IA pode oferecer.</p>
+            <!-- Simulação de um desafio de correspondência (Matching) -->
+            <div class="space-y-4">
+                <div class="p-4 bg-white border border-rise-border rounded-lg"><strong>Tarefa:</strong> Planear as refeições da semana.</div>
+                <div class="text-center text-xl text-gray-400">↓</div>
+                <div class="p-4 bg-white border-2 border-dashed border-rise-border rounded-lg text-rise-text-light text-center">Arraste a ajuda correspondente aqui</div>
+            </div>
+             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-3 bg-blue-100 border border-blue-300 rounded-lg cursor-grab"><strong>Ajuda da IA:</strong> Criar uma lista de compras e receitas.</div>
+                <div class="p-3 bg-blue-100 border border-blue-300 rounded-lg cursor-grab"><strong>Ajuda da IA:</strong> Escrever um email formal.</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bloco 7: Expandir Horizontes e Integração com Google -->
+    <div class="rise-block">
+        <h2 class="rise-subtitle">Aprender: Expandir Horizontes</h2>
+        <p class="rise-text">A lógica que aprendeu aqui serve para todos os assistentes de IA. Para terminar, queremos mostrar-lhe um 'superpoder' do Gemini: por ser da Google, ele consegue ligar-se a outras ferramentas como o Maps e o Voos.</p>
+        <div class="learning-card">
+            <h3 class="font-lexend font-semibold text-rise-blue mb-2">Dica Avançada: Prompt com Integração</h3>
+            <p>Experimente este prompt no Gemini para ver a magia acontecer:</p>
+            <p class="mt-2 p-3 bg-gray-100 rounded-md text-gray-700 italic">"Este fim de semana vou a Tomar. Podes criar um percurso de carro a partir de Lisboa e sugerir o que ver e onde comer? Gosto de comida tradicional portuguesa."</p>
+        </div>
+    </div>
+
+    <!-- Bloco 8: Conclusão da Missão -->
+    <div class="text-center mt-16">
+        <button class="bg-rise-blue text-white font-bold py-4 px-10 rounded-full hover:bg-blue-700 transition-all duration-200 shadow-lg shadow-blue-500/30 transform hover:-translate-y-1 text-lg">
+            CONCLUIR MISSÃO 1
+        </button>
+    </div>
+
+</div>
+
+</body>
+</html>

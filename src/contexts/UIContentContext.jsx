@@ -1,32 +1,9 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { getUIContent } from '../services/apiContent.js';
-import { useAuth } from './AuthContext.jsx'; // 1. Importar o useAuth
+import React, { createContext, useContext } from 'react';
 
 const UIContentContext = createContext();
 
-export function UIContentProvider({ children }) {
-  const { loading: authLoading } = useAuth(); // 2. Obter o estado de carregamento do AuthContext
-  const [texts, setTexts] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // 3. Apenas busca os textos se a autenticação NÃO estiver a carregar
-    if (!authLoading) {
-      console.log("UIContentProvider: Auth carregado. A iniciar a busca por textos...");
-
-      getUIContent()
-        .then((data) => {
-          console.log("UIContentProvider: Textos recebidos com sucesso!");
-          setTexts(data);
-          setIsLoading(false);
-        })
-        .catch((err) => {
-          console.error("UIContentProvider: Ocorreu um ERRO ao buscar os textos!", err);
-          setIsLoading(false);
-        });
-    }
-  }, [authLoading]); // 4. O efeito agora depende do estado de carregamento da autenticação
-
+// Este Provider também recebe o estado como propriedade
+export function UIContentProvider({ texts, isLoading, children }) {
   return (
     <UIContentContext.Provider value={{ texts, isLoading }}>
       {children}
